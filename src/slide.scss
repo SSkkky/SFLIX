@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+#app {
+    height: 100%;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #000;
+    color: #fff;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s ease-in-out;
+    }
+
+    a:hover {
+        color: red;
+    }
+
+    a::before {
+        width: 100%;
+        height: 5px;
+        background-color: #fff;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    nav {
+        display: flex;
+        gap: 2rem;
+        font-weight: 700;
+
+        a {
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        a::before {
+            content: '';
+            width: 100%;
+            height: 5px;
+            background-color: red;
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            transform: scaleX(0);
+            transition: 0.3s ease-in-out;
+        }
+
+        a:hover::before {
+            transform: scaleX(1);
+        }
+
+        .active::before {
+            transform: scaleX(1);
+        }
+    }
+}
+
+
+.mySwiper {
+    width: 100%;
+    height: 60vh;
+
+    margin-top: 100px;
+
+    &::after {
+        background-image: linear-gradient(0deg, #0f0f0f, transparent);
+        bottom: 0;
+        content: "";
+        height: 100px;
+        left: 0;
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+    }
+}
+
+.main-swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-size: cover;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+.swiper-slide img {
+    display: block;
+    width: 360px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.main-figure {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    align-items: center;
+    color: #fff;
+    gap: 6rem;
+    padding: 4rem;
+
+    position: absolute;
+
+    figcaption {
+        width: 50%;
+        font-weight: 700;
+        text-align: left;
+
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        .title {
+            font-size: 3rem;
+        }
+
+        .overview {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .slide-btn {
+            display: flex;
+            gap: 1rem;
+
+            button {
+                font-size: 1.5rem;
+                color: #fff;
+                padding: 0.5rem 1.5rem;
+                text-wrap: nowrap;
+                font-size: 1.2rem;
+                font-weight: 700;
+                background-color: transparent;
+                border: 2px solid #fff;
+                border-radius: 0.7rem;
+                transition: 0.3s ease-in-out;
+            }
+
+            .Watch-btn {
+                background-color: red;
+                border-color: red;
+                box-shadow: 0px 0px 20px 0 rgb(255 0 0 / 100%);
+            }
+
+            .Watch-btn:hover {
+                box-shadow: 0px 0px 30px 5px rgb(255 0 0 / 100%);
+            }
+
+            .trailer-btn:hover {
+                background-color: #fff;
+                color: #444;
+            }
+        }
+    }
+}
+
+.menu-section {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+
+    .header-cont {
+        margin: 2rem 0;
+        display: flex;
+        justify-content: space-between;
+
+        h3 {
+            font-size: 1.7rem;
+        }
+
+        button {
+            background-color: transparent;
+            padding: 0.2rem 1rem;
+            border: 2px solid #fff;
+            color: #fff;
+            border-radius: 2rem;
+            transition: 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #fff;
+            color: red;
+        }
+    }
+
+    .ms-Swiper {
+        height: 100%;
+
+        .ms-figure {
+            figcaption {
+                .ms-title {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+
+        .ms-figure:hover {
+            color: red;
+        }
+
+        .ms-figure:hover::before {
+            content: '▶';
+            color: #fff;
+            padding: 0.2rem 1rem 0.5rem 1rem;
+            border-radius: 0.2rem;
+            background-color: red;
+            position: absolute;
+            z-index: 10;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .ms-figure:hover img {
+            opacity: 0.5;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+
+    html,
+    body {
+        font-size: 14px;
+    }
+
+    .mySwiper {
+        margin-top: 75px;
+    }
+
+    .main-swiper {
+        height: 60vh;
+
+        .main-figure {
+            img {
+                display: none;
+            }
+        }
+
+
+        figcaption {
+            button {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .main-figure {
+        justify-content: flex-end;
+
+        figcaption {
+            width: 100%;
+        }
+
+        img {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    .menu-section .header-cont {
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        button {
+            font-size: 0.9rem;
+            border-width: 1px;
+        }
+    }
+}
