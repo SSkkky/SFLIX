@@ -1,5 +1,5 @@
 # SEFIX
-<a href="https://skyflix-ten.vercel.app/">배포링크</a>
+<a href="https://skyflix-ten.vercel.app/" target="_blink">배포링크</a>
 ![sflixThumb](https://github.com/SSkkky/SFLIX/assets/125051373/0a939c1d-f6da-4ad9-b6f3-02a2b65c61a4)
 
 ---
